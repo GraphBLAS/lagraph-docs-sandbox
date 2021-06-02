@@ -7,14 +7,8 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - name: Compile HTML
-        uses: docker://pandoc/core:2.9
-        with:
-          args: "--mathjax --standalone --from markdown+latex_macros bfs.md --output bfs.html"
-      - name: Compile PDF
-        uses: docker://pandoc/latex:2.9
-        with:
-          args: "--from markdown+latex_macros bfs.md --output bfs.pdf --template eisvogel"
+      - name: Build PDF and HTML with the Pandoc/LaTeX engine in Docker
+        uses: ftsrg/document-converter-actions@master
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
