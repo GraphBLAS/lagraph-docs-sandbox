@@ -12,7 +12,7 @@ jobs:
         with:
           args: "--mathjax --standalone --from markdown+latex_macros bfs.md --output bfs.html"
       - name: Compile PDF
-        uses: docker://pandoc/core:2.9
+        uses: docker://pandoc/latex:2.9
         with:
           args: "--from markdown+latex_macros bfs.md --output bfs.pdf --template eisvogel"
       - name: Deploy 🚀
