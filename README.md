@@ -1,1 +1,1 @@
-https://github.com/szarnyasg/lagraph-docs-sandbox/commit/51fdf158116a1b0f8684ac9e9a1f8ca6eb7f95ab
+https://github.com/szarnyasg/lagraph-docs-sandbox/commit/be26129b0a678879c6d2114a6d7ee9be0e659621
