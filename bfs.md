@@ -81,7 +81,7 @@ logo-width: "90mm"
 
 ## Some code
 
-```bash
+```c
 GrB_mxm(&frontier, numsp, GrB_NULL, Int32AddMul, A,frontier, desc_tsr);
 ```
 
