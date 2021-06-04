@@ -82,7 +82,7 @@ logo-width: "90mm"
 ## Some code
 
 ```c
-GrB_mxm(&frontier, numsp, GrB_NULL, Int32AddMul, A,frontier, desc_tsr);
+GrB_mxm(&frontier, numsp, GrB_NULL, Int32AddMul, A, frontier, desc_tsr);
 ```
 
 
