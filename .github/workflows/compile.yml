@@ -13,6 +13,10 @@ jobs:
         uses: docker://pandoc/core:2.14
         with:
           args: "--mathjax --standalone --from markdown+latex_macros bfs.md --output bfs.html"
+      - name: Build HTML with the pandoc/core Docker image
+        uses: docker://pandoc/core:2.14
+        with:
+          args: "--mathjax --standalone --from markdown+latex_macros table.md --output table.html"
       - name: Prepare for deployment
         run: |
           mkdir out

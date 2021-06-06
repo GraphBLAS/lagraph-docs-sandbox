@@ -1,5 +1,5 @@
 ---
-title: LAGraph documentation test
+title: LAGraph table test
 titlepage: true
 logo: "graphblas-logo.pdf"
 logo-width: "90mm"
