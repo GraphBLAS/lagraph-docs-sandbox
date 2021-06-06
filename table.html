@@ -171,125 +171,125 @@
 <tr class="odd">
 <td><code>mxm</code></td>
 <td>matrix-matrix multiplication</td>
-<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{A} \mathbin{\mathsf{\oplus.\otimes}}\mathbf{B}\)</span></td>
+<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\odot}{}\!\!= \mathbf{A} \mathbin{\mathsf{\oplus.\otimes}}\mathbf{B}\)</span></td>
 </tr>
 <tr class="even">
 <td><code>vxm</code></td>
 <td>vector-matrix multiplication</td>
-<td><span class="math inline">\(\mathbf{w}^\mathsf{T}\langle \mathbf{m}^\mathsf{T} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{u}^\mathsf{T}\mathbin{\mathsf{\oplus.\otimes}}\mathbf{A}\)</span></td>
+<td><span class="math inline">\(\mathbf{w}^\mathsf{T}\langle \mathbf{m}^\mathsf{T} \rangle \mathbin{\odot}{}\!\!= \mathbf{u}^\mathsf{T}\mathbin{\mathsf{\oplus.\otimes}}\mathbf{A}\)</span></td>
 </tr>
 <tr class="odd">
 <td><code>mxv</code></td>
 <td>matrix-vector multiplication</td>
-<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{A} \mathbin{\mathsf{\oplus.\otimes}}\mathbf{u}\)</span></td>
+<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\odot}{}\!\!= \mathbf{A} \mathbin{\mathsf{\oplus.\otimes}}\mathbf{u}\)</span></td>
 </tr>
 <tr class="even">
 <td><code>eWiseAdd</code></td>
 <td>element-wise addition using operator <span class="math inline">\(\mathsf{op}\)</span></td>
-<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{A} \mathbin{\mathsf{\cup[\mathsf{op}]}} \mathbf{B}\)</span></td>
+<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\odot}{}\!\!= \mathbf{A} \mathbin{\mathsf{\cup[\mathsf{op}]}} \mathbf{B}\)</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>on elements in the set union of structures of <span class="math inline">\(\mathbf{A}/\mathbf{B}\)</span> and <span class="math inline">\(\mathbf{u}\)</span>/<span class="math inline">\(\mathbf{v}\)</span></td>
-<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{u} \mathbin{\mathsf{\cup[\mathsf{op}]}} \mathbf{v}\)</span></td>
+<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\odot}{}\!\!= \mathbf{u} \mathbin{\mathsf{\cup[\mathsf{op}]}} \mathbf{v}\)</span></td>
 </tr>
 <tr class="even">
 <td><code>eWiseMult</code></td>
 <td>element-wise multiplication using operator <span class="math inline">\(\mathsf{op}\)</span></td>
-<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{A} \mathbin{\mathsf{\cap[\mathsf{op}]}} \mathbf{B}\)</span></td>
+<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\odot}{}\!\!= \mathbf{A} \mathbin{\mathsf{\cap[\mathsf{op}]}} \mathbf{B}\)</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>on elements in the set intersection of structures of <span class="math inline">\(\mathbf{A}/\mathbf{B}\)</span> and <span class="math inline">\(\mathbf{u}\)</span>/<span class="math inline">\(\mathbf{v}\)</span></td>
-<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{u} \mathbin{\mathsf{\cap[\mathsf{op}]}} \mathbf{v}\)</span></td>
+<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\odot}{}\!\!= \mathbf{u} \mathbin{\mathsf{\cap[\mathsf{op}]}} \mathbf{v}\)</span></td>
 </tr>
 <tr class="even">
 <td><code>extract</code></td>
 <td>extract submatrix from matrix <span class="math inline">\(\mathbf{A}\)</span> using indices <span class="math inline">\(\textbf{\textit{i}}\)</span> and indices <span class="math inline">\(\textbf{\textit{j}}\)</span></td>
-<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{A}(\textbf{\textit{i}}, \textbf{\textit{j}})\)</span></td>
+<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\odot}{}\!\!= \mathbf{A}(\textbf{\textit{i}}, \textbf{\textit{j}})\)</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>extract the <span class="math inline">\(\mathit{i}\)</span>th row vector from matrix <span class="math inline">\(\mathbf{A}\)</span></td>
-<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{A}(\mathit{i}, :)\)</span></td>
+<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\odot}{}\!\!= \mathbf{A}(\mathit{i}, :)\)</span></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>extract the <span class="math inline">\(\mathit{j}\)</span>th column vector from matrix <span class="math inline">\(\mathbf{A}\)</span></td>
-<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{A}(:, \mathit{j})\)</span></td>
+<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\odot}{}\!\!= \mathbf{A}(:, \mathit{j})\)</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>extract subvector from <span class="math inline">\(\mathbf{u}\)</span> using indices <span class="math inline">\(\textbf{\textit{i}}\)</span></td>
-<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{u}(\textbf{\textit{i}})\)</span></td>
+<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\odot}{}\!\!= \mathbf{u}(\textbf{\textit{i}})\)</span></td>
 </tr>
 <tr class="even">
 <td><code>assign</code></td>
 <td>assign matrix to submatrix with mask for <span class="math inline">\(\mathbf{C}\)</span></td>
-<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle (\textbf{\textit{i}},\textbf{\textit{j}}) \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{A}\)</span></td>
+<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle (\textbf{\textit{i}},\textbf{\textit{j}}) \mathbin{\odot}{}\!\!= \mathbf{A}\)</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>assign scalar to submatrix with mask for <span class="math inline">\(\mathbf{C}\)</span></td>
-<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle (\textbf{\textit{i}},\textbf{\textit{j}}) \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathit{s}\)</span></td>
+<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle (\textbf{\textit{i}},\textbf{\textit{j}}) \mathbin{\odot}{}\!\!= \mathit{s}\)</span></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>assign vector to subvector with mask for <span class="math inline">\(\mathbf{w}\)</span></td>
-<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle (\textbf{\textit{i}}) \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{u}\)</span></td>
+<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle (\textbf{\textit{i}}) \mathbin{\odot}{}\!\!= \mathbf{u}\)</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>assign scalar to subvector with mask for <span class="math inline">\(\mathbf{w}\)</span></td>
-<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle (\textbf{\textit{i}}) \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathit{s}\)</span></td>
+<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle (\textbf{\textit{i}}) \mathbin{\odot}{}\!\!= \mathit{s}\)</span></td>
 </tr>
 <tr class="even">
 <td><code>apply</code></td>
 <td>apply unary operator <span class="math inline">\(\mathit{f}\)</span> with optional thunk <span class="math inline">\(k\)</span></td>
-<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathrm{f}(\mathbf{A}, \mathit{k})\)</span></td>
+<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\odot}{}\!\!= \mathrm{f}(\mathbf{A}, \mathit{k})\)</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td></td>
-<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathrm{f}(\mathbf{u}, \mathit{k})\)</span></td>
+<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\odot}{}\!\!= \mathrm{f}(\mathbf{u}, \mathit{k})\)</span></td>
 </tr>
 <tr class="even">
 <td><code>select</code></td>
 <td>apply select operator <span class="math inline">\(\mathit{f}\)</span> with optional thunk <span class="math inline">\(k\)</span></td>
-<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{A}\langle \mathrm{f}(\mathbf{A}, \mathit{k}) \rangle\)</span></td>
+<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\odot}{}\!\!= \mathbf{A}\langle \mathrm{f}(\mathbf{A}, \mathit{k}) \rangle\)</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td></td>
-<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{u}\langle \mathrm{f}(\mathbf{u}, \mathit{k}) \rangle\)</span></td>
+<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\odot}{}\!\!= \mathbf{u}\langle \mathrm{f}(\mathbf{u}, \mathit{k}) \rangle\)</span></td>
 </tr>
 <tr class="even">
 <td><code>reduce</code></td>
 <td>row-wise reduce matrix to column vector</td>
-<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} [ {\oplus}_{\mathit{j}}\, \mathbf{A}(:,\mathit{j}) ]\)</span></td>
+<td><span class="math inline">\(\mathbf{w} \langle \mathbf{m} \rangle \mathbin{\odot}{}\!\!= [ {\oplus}_{\mathit{j}}\, \mathbf{A}(:,\mathit{j}) ]\)</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>reduce matrix to scalar</td>
-<td><span class="math inline">\(\mathit{s} \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} [ {\oplus}_{\mathit{i}, \mathit{j}}\, \mathbf{A}(\mathit{i},\mathit{j}) ]\)</span></td>
+<td><span class="math inline">\(\mathit{s} \mathbin{\odot}{}\!\!= [ {\oplus}_{\mathit{i}, \mathit{j}}\, \mathbf{A}(\mathit{i},\mathit{j}) ]\)</span></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>reduce vector to scalar</td>
-<td><span class="math inline">\(\mathit{s} \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} [ {\oplus}_{\mathit{i}}\, \mathbf{u}(\mathit{i}) ]\)</span></td>
+<td><span class="math inline">\(\mathit{s} \mathbin{\odot}{}\!\!= [ {\oplus}_{\mathit{i}}\, \mathbf{u}(\mathit{i}) ]\)</span></td>
 </tr>
 <tr class="odd">
 <td><code>transpose</code></td>
 <td>transpose</td>
-<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathbf{A}^\mathsf{T}\)</span></td>
+<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\odot}{}\!\!= \mathbf{A}^\mathsf{T}\)</span></td>
 </tr>
 <tr class="even">
 <td><code>kronecker</code></td>
 <td>Kronecker multiplication using operator <span class="math inline">\(\mathsf{op}\)</span></td>
-<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\ensuremath{\ifstrempty{}{\texttt{\ensuremath{\odot}}}{}\!\!=}} \mathrm{kron}(\mathbf{A}, \mathsf{op}, \mathbf{B})\)</span></td>
+<td><span class="math inline">\(\mathbf{C} \langle \mathbf{M} \rangle \mathbin{\odot}{}\!\!= \mathrm{kron}(\mathbf{A}, \mathsf{op}, \mathbf{B})\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>GraphBLAS operations and methods. Notation: Matrices and vectors are typeset in bold, starting with uppercase (<span class="math inline">\(\mathbf{A}\)</span>) and lowercase (<span class="math inline">\(\mathbf{u}\)</span>) letters, respectively. Scalars including indices are lowercase italic (<span class="math inline">\(\mathit{k}\)</span>, <span class="math inline">\(\mathit{i}\)</span>, <span class="math inline">\(\mathit{j}\)</span>) while arrays are lowercase bold italic (<span class="math inline">\(\textbf{\textit{x}}\)</span>, <span class="math inline">\(\textbf{\textit{i}}\)</span>, <span class="math inline">\(\textbf{\textit{j}}\)</span>). <span class="math inline">\(\oplus\)</span> and <span class="math inline">\(\otimes\)</span> are the addition and multiplication operators forming a semiring and default to conventional arithmetic <span class="math inline">\(+\)</span> and <span class="math inline">\(\times\)</span> operators. <span class="math inline">\(\texttt{\ensuremath{\odot}}\)</span> is the accumulator operator. Operations can be modified via a descriptor; matrices can be transposed (<span class="math inline">\(\mathbf{B}^\mathsf{T}\)</span>), the mask can be complemented (<span class="math inline">\(\mathbf{C}\langle \neg \mathbf{M} \rangle\)</span>), and the mask can be valued (shown above) or structural (<span class="math inline">\(\mathbf{C}\langle s(\mathbf{M}) \rangle\)</span>). A structural mask can also be complemented (<span class="math inline">\(\mathbf{C}\langle \neg s(\mathbf{M}) \rangle\)</span>). The result can be cleared (replaced) after using it as input to the mask/accumulator step (<span class="math inline">\(\mathbf{C}\langle \mathbf{M}, \mathrm{r} \rangle\)</span>). Not all methods are listed (creating new operators, monoids, and semirings, clearing a matrix/vector, etc.).</p>
+<p>GraphBLAS operations and methods. Notation: Matrices and vectors are typeset in bold, starting with uppercase (<span class="math inline">\(\mathbf{A}\)</span>) and lowercase (<span class="math inline">\(\mathbf{u}\)</span>) letters, respectively. Scalars including indices are lowercase italic (<span class="math inline">\(\mathit{k}\)</span>, <span class="math inline">\(\mathit{i}\)</span>, <span class="math inline">\(\mathit{j}\)</span>) while arrays are lowercase bold italic (<span class="math inline">\(\textbf{\textit{x}}\)</span>, <span class="math inline">\(\textbf{\textit{i}}\)</span>, <span class="math inline">\(\textbf{\textit{j}}\)</span>). <span class="math inline">\(\oplus\)</span> and <span class="math inline">\(\otimes\)</span> are the addition and multiplication operators forming a semiring and default to conventional arithmetic <span class="math inline">\(+\)</span> and <span class="math inline">\(\times\)</span> operators. <span class="math inline">\(\odot\)</span> is the accumulator operator. Operations can be modified via a descriptor; matrices can be transposed (<span class="math inline">\(\mathbf{B}^\mathsf{T}\)</span>), the mask can be complemented (<span class="math inline">\(\mathbf{C}\langle \neg \mathbf{M} \rangle\)</span>), and the mask can be valued (shown above) or structural (<span class="math inline">\(\mathbf{C}\langle s(\mathbf{M}) \rangle\)</span>). A structural mask can also be complemented (<span class="math inline">\(\mathbf{C}\langle \neg s(\mathbf{M}) \rangle\)</span>). The result can be cleared (replaced) after using it as input to the mask/accumulator step (<span class="math inline">\(\mathbf{C}\langle \mathbf{M}, \mathrm{r} \rangle\)</span>). Not all methods are listed (creating new operators, monoids, and semirings, clearing a matrix/vector, etc.).</p>
 </body>
 </html>
