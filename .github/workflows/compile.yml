@@ -16,7 +16,7 @@ jobs:
       - name: Build HTML with the pandoc/core Docker image
         uses: docker://pandoc/core:2.14
         with:
-          args: "--mathjax --standalone --from markdown+latex_macros table.md --output table.html"
+          args: "--mathjax --standalone --from markdown+latex_macros+pipe_tables table.md --output table.html"
       - name: Prepare for deployment
         run: |
           mkdir out

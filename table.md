@@ -72,19 +72,63 @@ logo-width: "90mm"
 \newcommand{\grbstring}{\textrm{String}}
 \newcommand{\grbdate}{\textrm{Date}}
 
-## BFS algorithm
+\newcommand{\grbbinaryop}[1]{\mathbin{\grboperator{#1}}}
+\newcommand{\grbsemiringops}[2]{\mathbin{\grboperator{#1.#2}}}
+\newcommand{\grbplustimes}{\grbsemiringops{\grbplus}{\grbtimes}}
+\newcommand{\grbgenericop}{\grboperator{op}}
 
-* $\grbv{f}(\grbs{startVertex}) = \grbT$
-* $\grbs{level} = 1$ to $\grbs{n}-1$
-  * $\grbv{s} \grbmask{\grbv{f}} = \grbs{level}$
-  * $\grbv{f} \grbmaskreplace{\grbneg \grbv{s}} = \grbv{f} \grbm{A}$
-## Some code
+\newcommand{\grboperation}[2]{\grboperationnoarg{#1}(#2)}
+\newcommand{\grbnrows}[1]{\grboperation{nrows}{#1}}
+\newcommand{\grbncols}[1]{\grboperation{ncols}{#1}}
+\newcommand{\grbnvals}[1]{\grboperation{nvals}{#1}}
+\newcommand{\grbclear}[1]{\grboperation{clear}{#1}}
+\newcommand{\grbdiag}[1]{\grboperation{diag}{#1}}
+\newcommand{\grbselect}[1]{\grbmask{#1}}
+\newcommand{\grbkron}[1]{\grboperation{kron}{#1}}
+\newcommand{\grbtril}[1]{\grboperation{tril}{#1}}
+\newcommand{\grbtriu}[1]{\grboperation{triu}{#1}}
+\newcommand{\grbondiag}[1]{\grboperation{ondiag}{#1}}
+\newcommand{\grboffdiag}[1]{\grboperation{offdiag}{#1}}
 
-```c
-GrB_mxm(&frontier, numsp, GrB_NULL, Int32AddMul, A, frontier, desc_tsr);
-```
+## Table
 
 
-<!-- \newcommand{\tuple}[1]{\langle #1 \rangle} -->
-<!-- $$\tuple{a, b, c}$$ -->
+operation/method | description | notation
+-------|-----------|------------
+`mxm` | matrix-matrix multiplication | $\grbm{C} \grbmask{\grbm{M}} \grbaccumeq{} \grbm{A} \grbplustimes \grbm{B}$
+`vxm` | vector-matrix multiplication | $\grbv{w}\grbt \grbmask{\grbv{m}\grbt} \grbaccumeq{} \grbv{u}\grbt \grbplustimes \grbm{A}$
+`mxv` | matrix-vector multiplication | $\grbv{w} \grbmask{\grbv{m}} \grbaccumeq{} \grbm{A} \grbplustimes \grbv{u}$
+`eWiseAdd` | element-wise addition using operator $\grbgenericop$ | $\grbm{C} \grbmask{\grbm{M}} \grbaccumeq{} \grbm{A} \grbewiseadd{\grbgenericop} \grbm{B}$
+|          | on elements in the set union of structures of $\grbm{A}/\grbm{B}$ and $\grbv{u}$/$\grbv{v}$ | $\grbv{w} \grbmask{\grbv{m}} \grbaccumeq{} \grbv{u} \grbewiseadd{\grbgenericop} \grbv{v}$
+`eWiseMult` | element-wise multiplication using operator $\grbgenericop$ | $\grbm{C} \grbmask{\grbm{M}} \grbaccumeq{} \grbm{A} \grbewisemult{\grbgenericop} \grbm{B}$
+|           | on elements in the set intersection of structures of $\grbm{A}/\grbm{B}$ and $\grbv{u}$/$\grbv{v}$  |  $\grbv{w} \grbmask{\grbv{m}} \grbaccumeq{} \grbv{u} \grbewisemult{\grbgenericop} \grbv{v}$
+`extract` | extract submatrix from matrix $\grbm{A}$ using indices $\grba{i}$ and indices $\grba{j}$    |  $\grbm{C} \grbmask{\grbm{M}} \grbaccumeq{} \grbm{A}(\grba{i}, \grba{j})$
+|         | extract the $\grbs{i}$th row vector from matrix $\grbm{A}$ | $\grbv{w} \grbmask{\grbv{m}} \grbaccumeq{} \grbv{A}(\grbs{i}, :)$
+|         | extract the $\grbs{j}$th column vector from matrix $\grbm{A}$                    | $\grbv{w} \grbmask{\grbv{m}} \grbaccumeq{} \grbv{A}(:, \grbs{j})$
+|         | extract subvector from $\grbv{u}$ using indices $\grba{i}$ | $\grbv{w} \grbmask{\grbv{m}} \grbaccumeq{} \grbv{u}(\grba{i})$
+`assign`  | assign matrix to submatrix with mask for $\grbm{C}$        | $\grbm{C} \grbmask{\grbm{M}} (\grba{i},\grba{j}) \grbaccumeq{} \grbm{A}$
+|         | assign scalar to submatrix with mask for $\grbm{C}$        | $\grbm{C} \grbmask{\grbm{M}} (\grba{i},\grba{j}) \grbaccumeq{} \grbs{s}$
+|         | assign vector to subvector with mask for $\grbv{w}$        | $\grbv{w} \grbmask{\grbv{m}} (\grba{i}) \grbaccumeq{} \grbv{u}$
+|         | assign scalar to subvector with mask for $\grbv{w}$        | $\grbv{w} \grbmask{\grbv{m}} (\grba{i}) \grbaccumeq{} \grbs{s}$
+`apply`   | apply unary operator $\mathit{f}$ with optional thunk $k$  | $\grbm{C} \grbmask{\grbm{M}} \grbaccumeq{} \grbf{f}{\grbm{A}, \grbs{k}}$
+|         |                                                            | $\grbv{w} \grbmask{\grbv{m}} \grbaccumeq{} \grbf{f}{\grbv{u}, \grbs{k}}$
+`select`  | apply select operator $\mathit{f}$ with optional thunk $k$ | $\grbm{C} \grbmask{\grbm{M}} \grbaccumeq{} \grbm{A}\grbselect{\grbf{f}{\grbm{A}, \grbs{k}}}$
+|         |                                                            | $\grbv{w} \grbmask{\grbv{m}} \grbaccumeq{} \grbv{u}\grbselect{\grbf{f}{\grbv{u}, \grbs{k}}}$
+`reduce`  | row-wise reduce matrix to column vector                    | $\grbv{w} \grbmask{\grbv{m}} \grbaccumeq{} \grbreduce{\grbplus}{\grbs{j}}{\grbm{A}}{:,\grbs{j}}$
+|         | reduce matrix to scalar                                    | $\grbs{s} \grbaccumeq{} \grbreduce{\grbplus}{\grbs{i}, \grbs{j}}{\grbm{A}}{\grbs{i},\grbs{j}}$
+|         | reduce vector to scalar                                    | $\grbs{s} \grbaccumeq{} \grbreduce{\grbplus}{\grbs{i}}{\grbm{u}}{\grbs{i}}$
+`transpose` | transpose                                                | $\grbm{C} \grbmask{\grbm{M}} \grbaccumeq{} \grbm{A}\grbt$
+`kronecker` | Kronecker multiplication using operator $\grbgenericop$  | $\grbm{C} \grbmask{\grbm{M}} \grbaccumeq{} \grbkron{\grbm{A}, \grbgenericop, \grbm{B}}$
 
+GraphBLAS operations and methods. Notation:
+Matrices and vectors are typeset in bold, starting with uppercase ($\grbm{A}$) and lowercase ($\grbv{u}$) letters, respectively.
+Scalars including indices are lowercase italic ($\grbs{k}$, $\grbs{i}$, $\grbs{j}$) while arrays are lowercase bold italic ($\grba{x}$, $\grba{i}$, $\grba{j}$).
+$\grbplus$ and $\grbtimes$ are the addition and multiplication operators forming a semiring and default to conventional arithmetic $+$ and $\times$ operators.
+$\grbaccum$ is the accumulator operator.
+Operations can be modified via a descriptor;
+matrices can be transposed ($\grbm{B}\grbt$),
+the mask can be complemented ($\grbm{C}\grbmask{\neg \grbm{M}}$), and
+the mask can be valued (shown above) or structural ($\grbm{C}\grbmask{\grbstr{\grbm{M}}}$).
+A structural mask can also be complemented ($\grbm{C}\grbmask{\grbneg\grbstr{\grbm{M}}}$).
+The result can be cleared (replaced) after using it as input to the mask/accumulator step ($\grbm{C}\grbmaskreplace{\grbm{M}}$).
+Not all methods are listed (creating new operators, monoids, and semirings, clearing a matrix/vector, etc.).
