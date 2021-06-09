@@ -74,6 +74,8 @@ logo-width: "90mm"
 
 ## BFS algorithm
 
+This is `print("Hello world")`{.python} inline code.
+
 * $\grbv{f}(\grbs{startVertex}) = \grbT$
 * $\grbs{level} = 1$ to $\grbs{n}-1$
   * $\grbv{s} \grbmask{\grbv{f}} = \grbs{level}$
@@ -82,7 +84,11 @@ logo-width: "90mm"
 ## Some code
 
 ```c
-GrB_mxm(&frontier, numsp, GrB_NULL, Int32AddMul, A, frontier, desc_tsr);
+if (true) {
+  GrB_mxm(&frontier, numsp, GrB_NULL, Int32AddMul, A, frontier, desc_tsr);
+} else {
+  // never happens
+}
 ```
 
 
