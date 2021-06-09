@@ -78,6 +78,7 @@ logo-width: "90mm"
 * $\grbs{level} = 1$ to $\grbs{n}-1$
   * $\grbv{s} \grbmask{\grbv{f}} = \grbs{level}$
   * $\grbv{f} \grbmaskreplace{\grbneg \grbv{s}} = \grbv{f} \grbm{A}$
+
 ## Some code
 
 ```c
